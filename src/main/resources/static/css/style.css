@@ -1,0 +1,930 @@
+
+/* css start for login page */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+.login-img{
+height:100%;
+width:100%;
+}
+
+/* css end for login page */
+/* css start for course page */
+.course-icons img{
+width:75px;
+}
+.course-box{
+background: #f5f5f5;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin:1rem 2.5rem;
+}
+.course-icons {
+  text-align: center;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  margin-bottom:1rem;
+}
+
+/* css for course section registration form */
+#registration {
+    padding: 2vw 6vw 2vw 6vw;
+    background-image: linear-gradient(rgba(99,112,168,0.5),rgba(81,91,233,-0.5)),url("../image/course/st1.jpg");
+    width:100%;
+    height:500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ #registration .reminder{
+    color: #fff;
+ }
+ #registration .reminder h1{
+    color: #fff;
+ }
+ #registration .reminder .time{
+    display: flex;
+    margin-top: 40px;
+ }
+ #registration .reminder .time .date{
+    text-align: center;
+    padding: 13px 33px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    border-radius: 10px;
+    margin: 0 5px 10px 5px;
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 1.1rem;
+    font-weight: 600;
+ }
+
+/* css end for course page */
+
+
+/* css start for signup page */
+.signUp-img{
+height:100%;
+width:100%;
+}
+/* css end  for signup page */
+
+/* css start for contact page */
+.icons {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #f5f5f5;
+  margin-bottom:1rem;
+}
+.icons i{
+    height: 6.5rem;
+     width: 6.5rem;
+     line-height: 6.5rem;
+     font-size: 2.5rem;
+     color: #224bcf;
+     background: #e9edfb;
+     border-radius: 50%;
+     text-align: center;
+     margin-bottom: .5rem;
+}
+
+.contact-form{
+background: #f5f5f5;
+border-radius:1rem;
+padding:1rem;
+}
+
+/* css end for contact page */
+
+/* css start for about page */
+.about-image{
+height:450px;
+width:450px;
+}
+.about-p{
+font-size:20px;
+}
+
+/* css start for  team members section */
+ .card-p .image{
+ height:140px;
+ width:140px;
+ border-radius:50%;
+ padding:3px;
+ background:#7d2ae8;
+ }
+   .card-p .image img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid white;
+  }
+  .card-p{
+  background:#fff;
+  border-radius:20px;
+  position:relative;
+  margin:20px 0px;
+  width:250px;
+  }
+
+  .card-p::before{
+  content:"";
+  position:absolute;
+  height:30%;
+  width:100%;
+  background:#7d2ae8;
+  border-radius:20px 20px 0 0;
+
+  }
+  .card-p .card-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:17px;
+  position:relative;
+
+  z-index:100;
+  }
+  .card-p .media-icons{
+  position:absolute;
+  top:10px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  }
+  .card-p .media-icons i{
+  margin-top:10px;
+  color:#fff;
+  opacity:0.6;
+  transition:all 0.3s ease;
+  cursor:pointer;
+  }
+   .card-p .media-icons i:hover{
+   opacity:1;
+   }
+.card-p .name-profession{
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:10px;
+color:#333;
+}
+.name-profession .name{
+font-size:22px;
+font-weight:600;
+}
+.name-profession .profession{
+font-size:15px;
+font-weight:500;
+}
+.card-p .rating{
+display:flex;
+align-items:center;
+margin-top:5px;
+}
+.card-p .rating i{
+font-size:18px;
+margin:0 8px;
+color:#7d2ae8
+}
+.card-p .button{
+display:flex;
+justify-content:space-around;
+width:100%;
+margin-top:20px;
+}
+.card-p .button button{
+background:#7d2ae8;
+outline:none;
+border:none;
+color:#fff;
+padding:8px 22px;
+border-radius:20px;
+font-size:14px;
+transition:all 0.3s ease;
+}
+.button button:hover{
+background:#6616do;
+cursor:pointer;
+}
+
+/* css end for team members section */
+
+
+/* css end for about page */
+
+
+/* css start  for user profile page */
+  .my_profile_picture{
+    width:30px;
+    height:30px;
+    object-fit:cover;
+    border-radius:50%;
+    border:1px solid black;
+  }
+/* css end for user profile page */
+
+
+/* css end for user course page */
+
+
+/* FontAwesome for working BootSnippet :> */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #eee !important;
+}
+
+.course-course {
+    padding: 60px 0;
+}
+
+.course-course .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 2s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    border:2px solid black;border-radius:30px;
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 2s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 200px;
+    height: 200px;
+    border:2px solid white;
+    border-radius: 50%;
+
+}
+
+.font{
+font-size:20px;
+}
+/* css end for user course page */
+
+
+/* css for user base dashboard*/
+
+/*==============================================*/
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper .header{
+  z-index: 1;
+  background: #22242A;
+  position: fixed;
+  width: calc(100% - 0%);
+  height: 70px;
+  display: flex;
+  top: 0;
+}
+
+.wrapper .header .header-menu{
+  width: calc(100% - 0%);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.wrapper .header .header-menu .title{
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.wrapper .header .header-menu .title span{
+  color: #4CCEE8;
+}
+
+.wrapper .header .header-menu .sidebar-btn{
+  color: #fff;
+  position: absolute;
+  margin-left: 210px;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.wrapper .header .header-menu .sidebar-btn:hover{
+  color: #4CCEE8;
+}
+
+.wrapper .header .header-menu ul{
+  display: flex;
+}
+
+.wrapper .header .header-menu ul li a{
+  background: #fff;
+  color: #000;
+  text-decoration:none;
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  width: 34px;
+  height: 34px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  transition-property: background, color;
+}
+
+.wrapper .header .header-menu ul li a:hover{
+  background: #4CCEE8;
+  color: #fff;
+}
+.wrapper .header .header-menu ul li b{
+min-width:170px;
+border:2px solid black;
+border-radius:23px;
+ font-size:14px;
+ padding:5px;
+  background: #4CCEE8;
+  color: #fff;
+}
+.wrapper .sidebar{
+  z-index: 1;
+  background: #2F323A;
+  position: fixed;
+  top: 70px;
+  width: 250px;
+  height: calc(100% - 9%);
+  transition: 0.3s;
+  transition-property: width;
+  overflow-y: auto;
+}
+.sidebar a{
+display:block;
+width:100%;
+padding:10px 25px;
+text-decoration:none;
+color:gray;
+}
+.sidebar a:hover{
+background:#e2e2e2;
+}
+
+
+.wrapper .sidebar .sidebar-menu{
+  overflow: hidden;
+}
+.wrapper .sidebar .sidebar-menu .profile img{
+  margin: 20px 0;
+  width: 100px;
+  border:2px solid white;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.wrapper .sidebar .sidebar-menu .profile p{
+  color: #bbb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.wrapper .sidebar .sidebar-menu .item{
+  width: 250px;
+  overflow: hidden;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn{
+  display: block;
+  color: #fff;
+  position: relative;
+  padding: 25px 20px;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn:hover{
+  color: #4CCEE8;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn i{
+  margin-right: 20px;
+}
+
+.contents{
+margin-left:20%;
+}
+.wrapper .main-container{
+  width: (100% - 250px);
+  margin-top: 70px;
+  padding: 15px;
+  background: url(background.jpg)no-repeat;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.3s;
+}
+.wrapper.collapse .sidebar .profile img,
+.wrapper.collapse .sidebar .profile p,
+.wrapper.collapse .sidebar a span{
+  display: none;
+}
+
+.wrapper.collapse .sidebar .sidebar-menu .item .menu-btn{
+  font-size: 23px;
+}
+.wrapper.collapse .main-container{
+  width: calc(100% - 70px);
+  margin-left: 70px;
+}
+
+
+
+
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+.rounded-circle{
+    margin: 20px 0;
+    width: 200px;
+    border: 2px solid black;
+    height: 200px;
+    border-radius: 50%;
+}
+
+
+.signUp img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.div-demo{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-d{
+  border-radius: 25px;
+  background: #e2e2e2;
+  width: 320px;
+}
+
+.card-image{
+  background: white;
+  padding: 3px;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius:50%;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid blue;
+}
+.slide-content{
+  margin: 0 40px;
+}
+.image-content,.card-content{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10px 40px;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.image-content{
+  row-gap: 5px;
+  position: relative;
+  padding: 10px 0;
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: white;
+  padding: 8px 16px;
+  background-color: #4070f4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease ;
+}
+.button:hover{
+  background: #256df2;
+}
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #9fd3db;
+  left: 0;
+  top: 0;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070f4;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color:#e2e2e2;
+
+}
+
+
+
+/* student profile css start*/
+
+.student-profile .card {
+  border-radius: 10px;
+}
+
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
+}
+/* student profile css end*/
+
+
+/*==========================================================*/
+/* media query*/
+
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 75%;
+  }
+  section {
+    padding: 1rem 1rem;
+  }
+      #registration .reminder .time .date{
+         padding: 9px 23px;
+      }
+  .icons{
+  font-size:.8rem;
+  }
+  .course-box{
+  padding:.5rem .5rem;
+  text-align:center;
+   margin:.5rem .5rem;
+  }
+    .home-box{
+    padding:.5rem .5rem;
+    text-align:center;
+     margin:.5rem .5rem;
+    }
+    .programming img{
+    height:300px;
+    width:540px;
+    }
+    .wrapper .sidebar{
+    width:195px;
+     height: calc(100% - 70%);
+    }
+}
+
+@media (max-width: 768px) {
+html {
+    font-size: 85%;
+  }
+  .about-p{
+  font-size:16px;
+  }
+.contents{
+margin-left:40%;
+display:block;
+}
+  #menu-btn {
+    display: inline-block;
+  }
+  .header {
+    padding: 2rem;
+  }
+     #registration .reminder .time .date{
+             padding: 9px 18px;
+          }
+
+  .contact-form{
+   font-size:2rem;
+  }
+    .icons{
+    font-size:1.5rem;
+    }
+     .course-box{
+      padding:.5rem .5rem;
+      text-align:center;
+       margin:.5rem .5rem;
+      }
+      .home-box{
+          padding:.5rem .5rem;
+          text-align:center;
+           margin:.5rem .5rem;
+          }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #224bcf;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar ul li {
+    width: 100%;
+  }
+  .header .navbar ul li ul {
+    width: 100%;
+    position: relative;
+  }
+  .about .content h3 {
+    font-size: 3rem;
+  }
+  .main-video video {
+    width: 95%;
+    border-width: .2rem;
+  }
+   .course-box{
+   padding: 0.5rem 0.5rem;
+  }
+                .wrapper .header .header-menu .title{
+
+                  font-size: 14px;
+
+                }
+
+              .wrapper .header .header-menu .sidebar-btn{
+
+                margin-left: 117px;
+
+              }
+                .wrapper .header .header-menu{
+
+                              padding: 0 ;
+                            }
+
+.programming img{
+height:220px;
+width:400px;
+}
+.wrapper .sidebar{
+    width:195px;
+     height: calc(100% - 70%);
+    }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+    .icons{
+    font-size:2rem;
+    }
+     .course-box{
+          padding:.5rem .5rem;
+          text-align:center;
+          margin:.5rem .5rem;
+          }
+           .about-p{
+            font-size:16px;
+            }
+          .home-box{
+              padding:.5rem .5rem;
+              text-align:center;
+               margin:.5rem .5rem;
+              }
+         #registration .reminder .time .date{
+                 padding: 9px 18px;
+              }
+              .course-box{
+                  padding: 2rem 2rem;
+
+              }
+              .wrapper .header .header-menu .title{
+
+                font-size: 14px;
+
+              }
+              .wrapper .header .header-menu .sidebar-btn{
+
+                margin-left: 117px;
+
+              }
+              .wrapper .header .header-menu{
+
+                padding: 0 ;
+              }
+
+.programming img{
+height:220px;
+width:400px;
+}
+.wrapper .sidebar{
+    width:195px;
+    height: calc(100% - 70%);
+    }
+}
+/*==========================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+

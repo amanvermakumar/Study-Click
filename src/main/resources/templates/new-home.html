@@ -1,0 +1,144 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"th:replace="new-base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <!-- home section started -->
+    <section class="section" >
+        <div class="main-home">
+            <div class="detail"><!---Sarah -->
+                <h1><span>Hi, It's Me</span> <br> I'm Your <span style="color:#00E8F8;">Partner</span></h1>
+                <p>We believe there is nothing more <br> important then education. </p>
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+            <div class="images">
+                <img src="../image/nav-img.png" alt="" width="100%">
+            </div>
+        </div>
+    </section>
+    <!-- home section end -->
+
+    <!-- feature section started -->
+    <div>
+        <div class="row" style="min-height:300px;">
+            <div class="col-sm-12">
+                <!-- <h1 class="text-center" style="color: white;">Features We Are Provided ..!!</h1> -->
+                <div class="row mt-1" style="min-height: 40%;padding:10px 47px;">
+                    <div class="col-sm-3  home-div" style="background-color: #2cccc4;">
+                        <div>
+                            <img src="../image/home-feature-loc.png" class="mt-4 ms-3 home-div-img" style="background-color: white">
+                        </div>
+                        <div class="home-div-text" style="color: white;">
+                            <h4>Stay Connected</h4>
+                            <p>We stay connected to the student at any time and any location,while  they first login into the system.We are always available for solving issue.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3  home-div" >
+                        <div>
+                            <img src="../image/home-feature-idea.png" class="mt-4 ms-3 home-div-img" style="background-color: #e2e2e2">
+                        </div>
+                        <div class="home-div-text">
+                            <h4>What's New</h4>
+                            <p>We bring you newly course material according to the requisites of student later.
+                                Thenafter we added some extra features.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3  home-div">
+                        <div>
+                            <img src="../image/home-feature-web.png"  class="mt-4 ms-3 home-div-img" style="background-color: #e2e2e2;">
+                        </div>
+                        <div class="home-div-text">
+                            <h4>Online Content</h4>
+                            <p>We provide a proper structure of course.Our Overall content is online. Student can access with the help of internet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-3" style="min-height: 40%;padding: 0 47px;">
+                    <div class="col-sm-3  home-div" >
+                        <div>
+                            <img src="../image/home-feature-set.png"  class="mt-4 ms-3 home-div-img" style="background-color: #e2e2e2;">
+                        </div>
+                        <div class="home-div-text">
+                            <h4>Life Time Access</h4>
+                            <p>We provide life time access course.Once they signup into the website they can easily access lifetime. </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3  home-div" >
+                        <div >
+                            <img src="../image/home-feature-time.png"  class="mt-4 ms-3 home-div-img" style="background-color: #e2e2e2;">
+                        </div>
+                        <div class="home-div-text">
+                            <h4>Customize Learning</h4>
+                            <p>We provide easy and customize study material.So student can take advantage and secure good marks in exam.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 home-div" style="background-color: #2cccc4;">
+                        <div>
+                            <img src="../image/home-feature-cost.png"  class="mt-4 ms-3 home-div-img" style="background-color: white">
+                        </div>
+                        <div class="home-div-text" style="color: white;">
+                            <h4>Free Of Cost</h4>
+                            <p>Our Study@Click website is finanically free of cost because we belief education is key to improving life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feature section ended -->
+    <div>
+        <div class="row" style="padding: 5%;background-color: #e2e2e2;">
+            <div class="col-sm-6">
+                <div class="img-1">
+                    <img src="/image/about-img.jpeg" alt="#" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="content">
+                    <h2>What you think about us ?</h2>
+
+                    <br>
+                    <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research.<br> Educational website can include websites that have games, videos or topic related resources that act as tools to enhance learning and supplement classroom teaching. These websites help make the process of learning entertaining and attractive to the student, especially in today's age.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- auto number increase -->
+    <div class="extra">
+        <p>We're increasing this data every year</p>
+        <div class="smbox">
+            <span><center><div class="data" data-val="154">154</div><div class="det">Enrolled Students</div></center></span>
+            <span><center><div class="data" data-val="62">62</div><div class="det">Total Courses</div></center></span>
+            <span><center><div class="data"data-val="56">56</div><div class="det">Placed Students</div></center></span>
+            <span><center><div class="data"data-val="27">27</div><div class="det">Total Projects</div></center></span>
+        </div>
+    </div>
+    <script>
+        let valueDisplays=document.querySelectorAll(".data");
+        let interval=5000;
+      valueDisplays.forEach((valueDisplays)=>{
+      let startvalue=0;
+      let endvalue=parseInt(valueDisplays.getAttribute("data-val"))
+      let duration=Math.floor(interval/endvalue);
+      let counter=setInterval(function()
+      {
+        startvalue+=1;
+        valueDisplays.textContent=startvalue;
+        if(startvalue==endvalue){
+          clearInterval(counter);
+        }
+      },duration
+      )
+      })
+      </script>
+</section>
+</body>
+</html>

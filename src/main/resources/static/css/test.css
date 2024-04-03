@@ -1,0 +1,93 @@
+/* css start for test section*/
+.test-box-width{
+width:285px;
+}
+.showQuiz{
+margin:4px;
+
+}
+.showQuiz-width{
+min-height:140px;
+width:378px
+}
+.test-question-div{
+float:left;
+ margin:0 20px 0 19px;
+ width:58%;
+ min-height:100px;
+}
+.test-question-overview{
+float:left;
+width:37%;
+padding:5px;
+min-height:100px;
+}
+.question-div{
+float:left;
+padding:8px;
+outline:2px solid orange;
+border-radius:20%;
+margin:9px;
+background:#d1d3d1;
+min-height:35px;
+min-width:35px;
+}
+/* css end for test section*/
+
+
+/*==========================================================*/
+/* media query*/
+
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 75%;
+  }
+    .test-box-width{
+    width:177px;
+    }
+    .showQuiz{
+    margin:2px;
+    }
+    .showQuiz-width{
+    width:237px
+    }
+    .font{
+    font-size:17px;
+    }
+}
+@media (max-width: 768px) {
+html {
+    font-size: 85%;
+  }
+     .test-box-width{
+        width:177px;
+        }
+        .showQuiz{
+        margin:2px;
+        }
+        .showQuiz-width{
+            width:237px
+            }
+            .font{
+            font-size:17px;
+            }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+     .test-box-width{
+        width:177px;
+        }
+        .showQuiz{
+        margin:2px;
+        }
+        .showQuiz-width{
+            width:237px
+            }
+            .font{
+            font-size:17px;
+            }
+}
+/*==========================================================*/

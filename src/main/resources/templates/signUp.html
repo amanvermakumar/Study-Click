@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="new-base::Layout(~{::section})"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link href="" th:href="@{/css/style.css}" rel="stylesheet">
+
+</head>
+<body >
+<section >
+    <div class="container-fluid">
+        <div class="row ms-3 " style="min-height:100px;">
+            <div class="col-md-6">
+                <form novalidate th:object="${student}" th:action="@{/do-register}" method="post" enctype="multipart/form-data" autocomplete="off">
+                <h1 class="text-center"style="font-family:RockwellRockwell;font-size:50px;color:white">SignUp Here</h1>
+                    <div class="alert alert-success text-center" role="alert" th:text="${success}" th:if="${success}" style="color:white">
+                    </div>
+                <div class="row mt-3" style="border:2px solid white;border-radius:23px;color:white">
+                    <div class="col-sm-6">
+                        <div  class="mycard mt-3">
+
+                            <div class="container">
+                                    <!-- Name field          -->
+                                <div class="mb-3">
+                                    <label for="name_field" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name_field" aria-describedby="emailHelp"
+                                           placeholder="Enter here"
+                                           name="name"
+                                           th:value="${student.name}"
+                                           th:classappend="${#fields.hasErrors('name') ? 'is-invalid': ''}"
+                                           required="required"/>
+                                    <div class="invalid-feedback" th:each="e:${#fields.errors('name')}"   th:text="${e}">
+                                    </div>
+                                </div>
+                                    <!-- email field          -->
+                                    <div class="mb-3">
+                                        <label for="email_field" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control" id="email_field" aria-describedby="emailHelp"
+                                               placeholder="Enter here"
+                                               name="email"
+                                               th:value="${student.email}"
+                                               th:classappend="${#fields.hasErrors('email') ? 'is-invalid': ''}"
+                                               required="required">
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('email')}"   th:text="${e}"></div>
+                                    </div>
+
+                                    <!-- password field          -->
+                                    <div class="mb-3">
+                                        <label for="password_field" class="form-label">Your Password</label>
+                                        <input type="password" class="form-control" id="password_field" aria-describedby="emailHelp"
+                                               placeholder="Enter here"
+                                               name="password"
+                                               th:value="${student.password}"
+                                               th:classappend="${#fields.hasErrors('password') ? 'is-invalid': ''}"
+                                               required="required"/>
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('password')}"   th:text="${e}"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password_field" class="form-label">Your Branch</label>
+                                        <input type="text" class="form-control" id="branch" aria-describedby="emailHelp"
+                                               placeholder="Enter here"
+                                               name="branch"
+                                               th:value="${student.branch}"
+                                               th:classappend="${#fields.hasErrors('branch') ? 'is-invalid': ''}"
+
+                                               required="required"/>
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('branch')}"   th:text="${e}"></div>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password_field" class="form-label">RollNo</label>
+                                        <input type="text" class="form-control" id="roll_no" aria-describedby="emailHelp"
+                                               placeholder="Enter here"
+                                               name="rollNo"
+                                               th:value="${student.rollNo}"
+                                               th:classappend="${#fields.hasErrors('rollNo') ? 'is-invalid': ''}"
+                                               required="required"/>
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('rollNo')}"   th:text="${e}"></div>
+                                    </div>
+                                <div class="mb-3">
+                                    <label for="password_field" class="form-label">Year</label>
+                                    <input type="text" class="form-control"  aria-describedby="emailHelp"
+                                           placeholder="Enter here"
+                                           name="year"
+                                           th:value="${student.year}"
+                                           th:classappend="${#fields.hasErrors('year') ? 'is-invalid': ''}"
+                                           required="required"/>
+                                    <div class="invalid-feedback" th:each="e:${#fields.errors('year')}"   th:text="${e}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" >
+                        <div  class="mycard mt-3">
+                            <div class="container">
+                                    <div class="mb-3">
+                                        <label for="name_field" class="form-label">Date Of Birth </label>
+                                        <input type="date" class="form-control" id="name_field1" aria-describedby="emailHelp"
+                                               name="dob"
+                                               placeholder="Date Of Birth"
+                                               th:value="${student.dob}"
+                                               th:classappend="${#fields.hasErrors('dob') ? 'is-invalid': ''}"
+                                               required="required"/>
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('dob')}"   th:text="${e}"></div>
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="name_field" class="form-label">Contact</label>
+                                        <input type="tel"  class="form-control"id="phone" name="phone"  placeholder="Enter Here"
+                                               th:value="${student.phone}"
+                                               th:classappend="${#fields.hasErrors('phone') ? 'is-invalid': ''}"
+
+                                               required="required">
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('phone')}"   th:text="${e}"></div>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="name_field" class="form-label">College</label>
+                                        <input type="text" class="form-control" id="College" aria-describedby="emailHelp"
+                                               name="college"
+                                               placeholder="Enter Here"
+                                               th:value="${student.college}"
+                                               th:classappend="${#fields.hasErrors('college') ? 'is-invalid': ''}"
+                                               required="required"/>
+                                        <div class="invalid-feedback" th:each="e:${#fields.errors('college')}"   th:text="${e}"></div>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="cars" class="form-label">Gender</label>
+                                        <select name="gender" class="form-control" id="cars">
+                                            <option value="Male">Male</option>
+                                            <option  value="Female">Female</option>
+                                        </select>
+
+
+                                    </div>
+                                <div class="signUp text-center">
+                                    <img id="output" src="../image/signup.png" />
+                                </div>
+                                <div class="input-group mt-3">
+                                    <input type="file"  name="profileImage" id="file" accept="image/*" onchange="loadFile(event)" class="form-control">
+                                </div>
+
+                                <script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group form-check ">
+                        <div class="text-center">
+                            <input type="checkbox" id="check1" name="agree">
+                            <span for="check1"><b style="color:white">Agree Terms & Condition</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center">
+                    <button  type="submit" class="btn btn-primary  m-2 text-white">SUBMIT</button>
+
+                    <button type="reset" class="btn btn-warning   m-2 text-white">RESET</button>
+                </div>
+                </form>
+            </div>
+            <div class="col-sm-6" >
+                <img class="signUp-img" src="../image/loginBgs.jpg"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

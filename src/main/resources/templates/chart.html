@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Google Charts Example - Spring Boot</title>
+    <link href="" th:href="@{/css/style1.css}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+<section>
+<div>
+    <h2>Spring Boot Google Charts Example</h2>
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="bg-light rounded h-100 p-4 ani">
+            <h6 class="mb-4">Single Line Chart</h6>
+            <div id="chart_div"></div>
+        </div>
+
+    </div>
+    <div class="col-sm-6">
+        <div class="bg-light rounded h-100 p-4">
+            <h6 class="mb-4">Single Line Chart</h6>
+            <div id="piechart" >
+        </div>
+
+    </div>
+    </div>
+
+</div>
+</div>
+<script th:inline="javascript">
+        var real_data = /*[[${chartData}]]*/'noValue';
+        $(document).ready(function() {
+            google.charts.load('current', {
+                packages : [ 'corechart', 'bar' ]
+            });
+            google.charts.setOnLoadCallback(drawColumnChart);
+            google.charts.setOnLoadCallback(drawPieChart);
+        });
+        function drawColumnChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Year');
+            data.addColumn('number', 'Views');
+            Object.keys(real_data).forEach(function(key) {
+                data.addRow([ key, real_data[key] ]);
+            });
+            var options = {
+                title : 'Blog stats',
+                hAxis : {
+                    title : 'Years',
+                },
+                vAxis : {
+                    title : 'View Count'
+                }
+            };
+            var chart = new google.visualization.ColumnChart(document
+                    .getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+        function drawPieChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Year');
+            data.addColumn('number', 'Views');
+            Object.keys(real_data).forEach(function(key) {
+                data.addRow([ key, real_data[key] ]);
+            });
+            var options = {
+                title : 'Blog stats',
+                color:"#F38630"
+            };
+            var chart = new google.visualization.PieChart(document
+                    .getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+</section>
+</body>
+</html>

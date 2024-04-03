@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/testBase::Layout(~{::section})}"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <div>
+        <div style="display:inline-block;width:49%">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                    <h3 class="mb-0"><i class="far fa-clone pr-1"></i>&nbsp;Quiz Result</h3>
+                </div>
+                <form th:object="${result}" th:action="@{'/user/quizData/'+${saveResultId}}" method="post">
+                <div class="card-body pt-0">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="30%">Test ID</th>
+                            <td width="2%">:</td>
+                            <td th:text="${quizId}" name="quizId" value="54" ></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Total Question	</th>
+                            <td width="2%">:</td>
+                            <td th:text="${totalQuestion}" th:value="${totalQuestion}" name="totalQuestion"></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Attempted Question</th>
+                            <td width="2%">:</td>
+                            <td th:text="${attemptedQuestion}" name="attemptedQuestion" th:value="${attemptedQuestion}"></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Total Correct Answer</th>
+                            <td width="2%">:</td>
+                            <td th:text="${correctAnswer}" th:value="${correctAnswer}" name="correctQuestion" ></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Total Wrong Answer</th>
+                            <td width="2%">:</td>
+                            <td th:text="${wrongAnswer}" th:value="${wrongAnswer}" name="wrongQuestion"></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Obtained Marks</th>
+                            <td width="2%">:</td>
+                            <td th:text="${score}+'/'+${totalMarks}" th:value="${score}+'/'+${totalMarks}" name="scoreMarks"></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Percentage</th>
+                            <td width="2%">:</td>
+                            <td th:text="${percentage}+'%'"  value="40" name="percentage"></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Result</th>
+                            <td width="2%">:</td>
+                            <td  ><b th:text="${resultStatus}" th:value="${resultStatus}" name="result"></b></td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Performance</th>
+                            <td width="2%">:</td>
+                            <td th:text="${performance}" th:value="${performance}" name="performance" ></td>
+                        </tr>
+                    </table>
+                </div>
+                    <button  type="submit" class="btn btn-primary  m-2 text-white" name="action" value="action">End Quiz</button>
+                </form>
+            </div>
+        </div>
+        <div style="display:inline-block;width:49%">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent  border-0">
+                    <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="bg-light rounded h-100 p-4">
+                        <div id="piechart" style="height:300px;background:none;border:none" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+        var real_data = /*[[${chartData}]]*/'noValue';
+        $(document).ready(function() {
+            google.charts.load('current', {
+                packages : [ 'corechart', 'bar' ]
+            });
+            google.charts.setOnLoadCallback(drawPieChart);
+        });
+        function drawPieChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Year');
+            data.addColumn('number', 'Views');
+            Object.keys(real_data).forEach(function(key) {
+                data.addRow([ key, real_data[key] ]);
+            });
+            var options = {
+             colors: ['#3781f1', '#55c747','#f14e4e','#f4d759']
+
+            };
+            var chart = new google.visualization.PieChart(document
+                    .getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+</section>
+
+<script>
+    const startTime=20;
+    let time=startTime*60;
+    const countdown=document.getElementById('time');
+    setInterval(updateCountDown,1000);
+    function updateCountDown(){
+    const minutes=Math.floor(time/60);
+    let second=time%60;
+    countdown.innerHTML=`${minutes}:${second}`;
+     time--;
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar Dashboard Template With Sub Menu</title>
+</head>
+<body>
+<section >
+  <div class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+              <img src="" th:if="${student.data}" th:src="@{'/stImage/'+${student.sid}}" alt="User" class="rounded-circle" width="150">
+              <img src="" th:unless="${student.data}" th:src="'../image/defaultProfile.png'" alt="User" class="rounded-circle" width="150">
+              <h3 th:text="${student.name}"></h3>
+            </div>
+            <div class="card-body">
+              <p class="mb-0"><strong class="pr-1">Student ID:</strong> <span th:text="SCM2023+${student.sid}"></span></p>
+              <p class="mb-0"><strong class="pr-1">Branch:</strong> <span th:text="${student.branch}"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Roll No</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.rollNo}"></td>
+                </tr>
+                <tr>
+                  <th width="30%">Academic Year	</th>
+                  <td width="2%">:</td>
+                  <td>2020</td>
+                </tr>
+                <tr>
+                  <th width="30%">Gender</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.gender}"></td>
+                </tr>
+                <tr>
+                  <th width="30%">College</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.college}"></td>
+                </tr>
+                <tr>
+                  <th width="30%">DOB</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.dob}"></td>
+                </tr>
+                <tr>
+                  <th width="30%">Contact</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.phone}"></td>
+                </tr>
+                <tr>
+                  <th width="30%">Year</th>
+                  <td width="2%">:</td>
+                  <td th:text="${student.year}"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

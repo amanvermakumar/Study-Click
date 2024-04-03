@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar Dashboard Template With Sub Menu</title>
+</head>
+<body>
+<section>
+  <div class="main-stdDash">
+
+    <div class="box-container">
+
+      <div class="box box1">
+        <div class="text">
+          <h2 class="topic-heading" th:text="${totalTest}">60.5k</h2>
+          <h2 class="topic">Attempted Test</h2>
+        </div>
+
+        <img src=
+                     "../image/quiz.png"
+             alt="Views">
+      </div>
+
+      <div class="box box2">
+        <div class="text">
+          <h2 class="topic-heading">150</h2>
+          <h2 class="topic">Likes</h2>
+        </div>
+
+        <img src=
+                     "https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
+             alt="likes">
+      </div>
+
+      <div class="box box3">
+        <div class="text">
+          <h2 class="topic-heading">320</h2>
+          <h2 class="topic">Comments</h2>
+        </div>
+
+        <img src=
+                     "https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+             alt="comments">
+      </div>
+
+      <div class="box box4">
+        <div class="text">
+          <h2 class="topic-heading" th:text="${performance}+' %'">70</h2>
+          <h2 class="topic">Performance</h2>
+        </div>
+
+        <img src=
+                     "../image/checked.png" alt="published">
+      </div>
+    </div>
+
+    <div class="report-container">
+      <div class="report-header">
+        <h1 class="recent-Articles">Result Status</h1>
+      </div>
+
+      <div class="report-body">
+        <table class="table" >
+          <thead>
+          <tr class="table-danger">
+            <th scope="col">#ID</th>
+            <th scope="col">Test-Name</th>
+            <th scope="col">Total-Question</th>
+            <th scope="col">Scored Marks</th>
+            <th scope="col">Total Marks</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Result</th>
+            <th scope="col">Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="c:${result}">
+            <th scope="row" th:text="${c.resultId}">1</th>
+            <td th:text="${c.quizName}">
+
+            </td>
+
+            <td  th:text="${c.totalQuestion}"></td>
+            <td  th:text="${c.scoreMarks}"></td>
+            <td  th:text="${c.totalMarks}"></td>
+            <td  th:text="${c.performance}"></td>
+            <td  th:text="${c.result}"></td>
+            <td  th:text="${c.date}"></td>
+
+
+
+
+
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+</body>
+</html>

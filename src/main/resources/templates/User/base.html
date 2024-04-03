@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="Layout(content)">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar Dashboard Template With Sub Menu</title>
+  <link href="" th:href="@{/css/style.css}" rel="stylesheet">
+  <link href="" th:href="@{/css/test.css}" rel="stylesheet">
+  <link href="" th:href="@{/css/course-demo.css}" rel="stylesheet">
+  <link href="" th:href="@{/css/studentDashBoard.css}" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+           function active(sid){
+Swal.fire({
+  text: 'Are you want to start the quiz?',
+  icon: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#5fb75f',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Start Quiz!'
+}).then((result) => {
+  if (result.isConfirmed) {
+  window.location="/user/startQuestion/"+sid;
+  }
+});
+}
+  </script>
+</head>
+<body style="background:#f9f1f1">
+<!--wrapper start-->
+<div class="wrapper">
+  <!--header menu start-->
+  <div class="header">
+    <div class="header-menu">
+      <div class="title">Study<span>@Click</span></div>
+      <div class="sidebar-btn">
+        <i onclick="toggleSidebar()" class="fas fa-bars "></i>
+      </div>
+      <ul style="list-style: none;">
+        <li class="ps-1 mt-4 " style=""> <b>Study<span>@Click&nbsp;</span><span >SCM2023<span th:text="${student.sid}"></span></span></b></li>
+        <li class="mt-3"><a href="#" th:href="@{/home}"><i class="fa-solid fa-house"></i></a></li>
+        <li class="mt-3"><a href="#" th:href="@{/logout}"><i class="fas fa-power-off"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--header menu end-->
+  <!--sidebar start-->
+  <div class="sidebar" style=" list-style: none;">
+    <div class="sidebar-menu">
+      <div class="profile text-center">
+        <img src=""  th:if="${student.data}" th:src="@{'/stImage/'+${student.sid}}" alt="">
+        <img src=""  th:unless="${student.data}" th:src="'../image/defaultProfile.png'" alt="">
+        <b><p class="fs-4" th:text="${student.name}"></p></b>
+      </div>
+      <li class="item">
+        <a href="#" th:href="@{/user/dologin}" class="menu-btn">
+          <i class="fas fa-desktop"></i><span>Dashboard</span>
+        </a>
+      </li>
+      <li class="item" id="profile">
+        <a href="#" th:href="@{/user/profile}" class="menu-btn">
+          <i class="fas fa-user-circle"></i><span>Profile</span>
+        </a>
+
+      </li>
+      <li class="item" id="messages">
+        <a href="" th:href="@{/user/course}" class="menu-btn">
+          <i class="fa-solid fa-book"></i><span>Courses </span>
+        </a>
+
+      </li>
+      <li class="item">
+        <a href="#" th:href="@{/user/test}"  class="menu-btn">
+          <i class="fa-solid fa-book"></i><span>Test</span>
+        </a>
+      </li>
+      <li class="item" id="settings">
+        <a th:href="@{/user/settings}"  class="menu-btn">
+          <i class="fas fa-cog"></i><span>Settings</span>
+        </a>
+
+      </li>
+      <li class="item">
+        <a href="#" th:href="@{/logout}" class="menu-btn">
+          <i class="fas fa-power-off"></i><span>Logout</span>
+        </a>
+      </li>
+
+    </div>
+  </div>
+  <!--sidebar end-->
+  <!--main container start-->
+  <div class="main-container contents">
+    <div th:replace="${content}"></div>
+  </div>
+  <!--main container end-->
+
+</div>
+<!--wrapper end-->
+
+<script th:src="@{/js/script.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>

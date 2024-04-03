@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar Dashboard Template With Sub Menu</title>
+</head>
+<body>
+<section>
+  <div class="container-fluid">
+    <div class="row" style="height:20%;">
+      <div class="col-sm-12 text-center mt-1" >
+        <b><h1>Courses</h1></b>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top,with image on top,</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="image-flip" >
+          <div class="mainflip flip-0">
+            <div class="frontside">
+              <div class="card" style="border:2px solid black;border-radius:23px;">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="../image/course/bg3.jpg" alt="card image"></p>
+                  <h4 class="card-title">Programming</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm "><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside" >
+              <div class="card" >
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Programming</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top,with image on top,</p>
+
+                  <a href="#" th:href="@{'/user/course-programming/1'}" class="btn btn-primary bg-mycolor card_btn mt-3">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card" style="border:2px solid black;border-radius:23px;">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="../image/course/bg2.jpg" alt="card image"></p>
+                  <h4 class="card-title">Courses</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4" >
+                  <h4 class="card-title">Courses</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top,with image on top,</p>
+                  <a href="#" th:href="@{'/user/course-programming/2'}" class="btn btn-primary bg-mycolor card_btn mt-3">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card" style="border:2px solid black;border-radius:23px;">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="../image/course/bg.jpg" alt="card image"></p>
+                  <h4 class="card-title">Data Structure</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Data Structure</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top,with image on top,</p>
+                  <a th:href="@{'/user/course-programming/3'}"  class="btn btn-primary bg-mycolor card_btn mt-3">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ./Team member -->
+    </div>
+  </div>
+</section>
+</body>
+</html>

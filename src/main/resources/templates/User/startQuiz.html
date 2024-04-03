@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <div class="card">
+        <div class="card-body" style="background:#fefbfd">
+        <h4><b>Read the instructions of this page carefully</b></h4>
+            <p style="margin-top:-.5em;text-indent:0em;padding:0 5px 0 5px;color:#9d9b9b" > One step more to go</p>
+            <h4 th:text="${quizTitle}">Django Development</h4>
+            <p style="color:#3e3434" >This quiz contains questions related to Django framework, Basically to check the capability of programmer in django framework.
+            </p>
+            <hr/>
+            <h4>Important Instructions</h4>
+            <ul style="color:#3e3434">
+                <li style="list-style-type:disc">this quiz is only for practice purpose.</li>
+                <li style="list-style-type:disc">You have to submit quiz with in <b style="color:#444343;">20 Minutes </b>.</li>
+                <li style="list-style-type:disc">You can attempt the quiz any number of time.</li>
+                <li style="list-style-type:disc">Total marks of quiz is <b th:text="${maxMarks}"></b>.</li>
+                <li style="list-style-type:disc">There are <b style="color:#444343" th:text="${question}+' '+questions"></b>  in this quiz.</li>
+                <li style="list-style-type:disc">Each question carries <b style="color:#444343;" th:text="${marks}+' '+marks. "></b>No negative marking for wrong ones.</li>
+
+                <li style="list-style-type:disc">All questions are MCQ types.</li>
+            </ul>
+            <hr/>
+            <h4>Attempting Quiz</h4>
+            <ul style="color:#3e3434">
+                <li style="list-style-type:disc">Click <b style="color:#444343"> Start Quiz</b> button to start the quiz.</li>
+                <li style="list-style-type:disc">The time will start the moment you click the Start Quiz button.</li>
+                <li style="list-style-type:disc">You can not resume this quiz, if interrupted due to any reason.</li>
+                <li style="list-style-type:disc">Scroll down to move to next question.</li>
+                <li style="list-style-type:disc">Click on submit quiz button on completion of the quiz.</li>
+                <li style="list-style-type:disc">Report of the test is automatically generated.</li>
+            </ul>
+            <form >
+            <a th:unless="${checked}" th:href="@{'/user/quizQuestion/'+${quizId}}"><input type="radio" required> Agree Terms & Conditions </a>
+            <label th:if="${checked}">
+                <input type="radio" checked >
+                Agree Terms & Conditions
+            </label>
+            <div class="text-center">
+                <a href="#" th:onclick="|active(${start})|" class="btn btn-primary">Start Quiz</a>
+            </div>
+            </form>
+        </div>
+    </div>
+   <script type="text/javascript">
+    window.history.forward();
+    function noBack() {
+        window.history.forward();
+    }
+</script>
+</section>
+</body>
+</html>

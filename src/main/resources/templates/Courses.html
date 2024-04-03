@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"th:replace="new-base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses Page</title>
+</head>
+<body>
+<section>
+    <div class="container-fluid">
+        <div class="row" style="height:20%;">
+            <div class="col-sm-12 text-center mt-1" >
+                <b><h1 style="color:white;font-size:50px">Courses</h1></b>
+            </div>
+        </div>
+        <div id="courses"class="row head_section">
+            <div class="col-sm-4 mt-4">
+                <!-- Card Start -->
+                <div class="card w-100 card_margin" style="width: 18rem;">
+                    <img src="../image/course/bg.jpg" class="card-img-top" alt="..." style="max-height:300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Programming</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a th:href="@{'/courseProgramming/1'}" class="btn btn-primary bg-mycolor card_btn">Explore Now</a>
+                    </div>
+                </div>
+                <!-- Card End -->
+            </div>
+            <div class="col-sm-4 mt-4" style="border-radius:2px;">
+                <!-- Card Start -->
+                <div class="card w-100 card_margin" style="width: 18rem; ">
+                    <img src="../image/course/bg2.jpg" class="card-img-top" alt="..." style="max-height:300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Courses</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a th:href="@{'/courseProgramming/2'}" class="btn btn-primary bg-mycolor card_btn">Explore Now</a>
+                    </div>
+                </div>
+                <!-- Card End -->
+            </div>
+            <div class="col-sm-4 mt-4" style="border-radius:2px;">
+                <!-- Card Start -->
+                <div class="card w-100 card_margin" style="width: 18rem;">
+                    <img src="../image/course/bg3.jpg" class="card-img-top" alt="..." style="max-height:300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Structure</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a th:href="@{'/courseProgramming/3'}" class="btn btn-primary bg-mycolor card_btn">Explore Now</a>
+                    </div>
+                </div>
+                <!-- Card End -->
+            </div>
+        </div>
+        <div class="container-fluid  team-section mt-3">
+            <div class="row" id="registration">
+                <div class="col-sm-6">
+                    <!-- Registration.. -->
+                    <section >
+                        <div class="reminder">
+                            <p>Get 50+ Online Courses for Free</p>
+                            <h1>Register To Get It</h1>
+                            <div class="time">
+                                <div class="date" data-val="18">
+                                    18 <br> Days
+                                </div>
+                                <div class="date" data-val="25">
+                                    21 <br> Hours
+                                </div>
+                                <div class="date" data-val="59">
+                                    59 <br> Minutes
+                                </div>
+                                <div class="date" data-val="40">
+                                    55 <br> Second
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="col-sm-6 bg-light" style="padding:2rem;">
+                    <h3>I Will Stay With You</h3>
+                    <h3>Until You Pass Your Exam.</h3>
+                    <p style="line-height:2.5rem;">Study@Click during it's Mission, To facilitate student with the necessary academic preparation for a carrer in higher education and research to meet global challenges and emphasize excellence. To imbibe skills and provide knowledge necessary for competence building.To include values and ethics among the students to break them capable of leading a happy,purposeful and fulfilled life.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>

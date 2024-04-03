@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{new-base::Layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <title >login</title>
+</head>
+<body>
+<section>
+  <div class="container-fluid">
+    <div class="row " >
+      <div class="col-sm-6 mt-3">
+       <div class="row p-4" style="height:20%;">
+         <h1>
+            Study@Click
+         </h1>
+         <h2>
+           We provide best education.
+         </h2>
+       </div>
+        <div class="row" style="height:80%;">
+          <div class="col-sm-12">
+            <img class="login-img" src="../image/home-img.png"/>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 " >
+        <div  class="mycard mt-3">
+          <div class="container">
+
+            <form novalidate id="login-form"  class="form bg-light" action="" th:action="@{/dologin}" style="margin:80px; padding:20px;" method="post">
+              <h1 class="text-center">Login Here</h1>
+              <div th:if="${param.error}" class="alert alert-danger">
+                Invalid Username and password
+              </div>
+              <div th:if="${param.logout}" class="alert alert-danger">
+                You have been logged out
+              </div>
+              <!-- email field          -->
+              <div class="mb-3">
+                <label for="email_field" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email_field" aria-describedby="emailHelp"
+                       placeholder="Enter here"
+                       name="username"
+                       required="required">
+              </div>
+              <!-- password field          -->
+              <div class="mb-3">
+                <label for="password_field" class="form-label">Your Password</label>
+                <input type="password" class="form-control" id="password_field" aria-describedby="emailHelp"
+                       placeholder="Enter here"
+                       name="password"
+                       required="required"/>
+              </div>
+              <div class="container text-center">
+                <a href="/signUp" class="text-info p-0">Register here</a>
+                <button  type="submit" class="btn btn-primary  m-2 text-white">SUBMIT</button>
+
+              </div>
+
+            </form>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+</body>
+</html>

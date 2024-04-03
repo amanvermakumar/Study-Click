@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <h3 class="mt-2">Available Quizzes</h3>
+    <div class="showQuiz" th:each="c,i:${all}"  style="display:inline-block;">
+    <div class="card showQuiz-width" >
+        <div class="card-body" style="background:#fefbfd;display:inline-block;">
+        <div style="float:left" class="text-center" >
+            <img src="/image/quiz.png" style="margin:0 -23px 1px 0;height:55px;width:55px" alt=""/>
+        </div>
+        <p class="font" style="margin-top:0;text-indent:2em;padding:0 5px 0 5px;font-weight:bold;" th:text="${c.title}" >Java Basic Quiz</p>
+        <p style="margin-top:-1em;text-indent:2em;padding:0 5px 0 5px;" th:text="${c.category.title}" > Java</p>
+        <p class="text" th:id="text+${i.index}" th:text="${c.description}" > this is aptitude quiz this is aptitude quiz  is aptitude quiz this is aptitude quiz </p>
+            <div style="margin-top:-15px;">
+        <a   class="btn  btn-sm" style="color:blue">View </a>
+        <a  type="button" class="btn  btn-sm" style="color:#ff5580" th:href="@{'/user/startQuiz/'+${c.qId}}">Start</a>
+        <a  type="button" class="btn  btn-sm" style="color:#ff5580" th:text="'Question: ' +${c.numberOfQuestions}">Question: 100</a>
+        <a  type="button" class="btn  btn-sm" style="color:#ff5580;margin-left:7px" th:text="'M.M: '+${c.maxMarks}">M.M:20</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script th:inline="javascript">
+       var end = /*[[${count}]]*/;
+     for (let i = 0; i <end; i++) {
+     (function () {
+     var text = document.getElementById("text"+i).innerHTML;
+     var truncated = text.substring(0, 40) + "...";
+     document.getElementById("text"+i).innerHTML = truncated;
+   })();
+   }
+   </script>
+</section>
+</body>
+</html>

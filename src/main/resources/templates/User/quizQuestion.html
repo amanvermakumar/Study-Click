@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/testBase::Layout(~{::section})}"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Sidebar Dashboard Template With Sub Menu</title>
+</head>
+<body>
+<section >
+
+    <div style="position:relative">
+        <h4> On Going  <b th:text="${quizTitle}+' Quiz'">Python Basic Quiz</b> </h4>
+
+        <div class="test-question-div">
+            <p style="text-align:right;margin:0;">Marks for correct answer : <b th:text="${marks}" style="color:green">1 </b>| Negative Marks : <b style="color:red">0  </b></p>
+            <div style="height:30px;background:blue;"></div>
+         <div class="card text-bg-light mb-3"  >
+
+                <div class="card-body" >
+                    <form th:object="${data}" th:action="@{'/user/quizData/'+${quesId}}" method="post">
+                    <p style="margin:0"><b>Q <span th:text="${questionNo+1}" ></span>)</b ><span th:utext="${questionTitle}"></span></p>
+                    <hr/>
+                        <div style="margin:0 0 20px 6px" class="form-check">
+                            <input th:if="${selectedAnswer}==${option1}" class="form-check-input"  name="content"  type="radio" th:value="${option1}"  required  checked  />
+                            <input th:unless="${selectedAnswer}==${option1}" class="form-check-input"  name="content" type="radio" th:value="${option1}"  required />
+                            <label class="form-check-label" th:text="${option1}" >
+                                Default radio
+                            </label>
+                        </div>
+                        <div style="margin:0 0 20px 6px" class="form-check">
+                            <input th:if="${selectedAnswer}==${option2}" class="form-check-input"  name="content"  type="radio" th:value="${option2}"  required  checked  />
+                            <input th:unless="${selectedAnswer}==${option2}" class="form-check-input"  name="content" type="radio" th:value="${option2}"  required />
+                            <label class="form-check-label" th:text="${option2}">
+                                Default radio
+                            </label>
+                        </div>
+                        <div style="margin:0 0 20px 6px" class="form-check">
+                            <input th:if="${selectedAnswer}==${option3}" class="form-check-input"  name="content"  type="radio" th:value="${option3}"  required  checked  />
+                            <input th:unless="${selectedAnswer}==${option3}" class="form-check-input"  name="content" type="radio" th:value="${option3}"  required />
+                            <label class="form-check-label" th:text="${option3}">
+                                Default radio
+                            </label>
+                        </div>
+                        <div style="margin:0 0 20px 6px" class="form-check">
+                            <input th:if="${selectedAnswer}==${option4}" class="form-check-input"  name="content"  type="radio" th:value="${option4}"  required  checked  />
+                            <input th:unless="${selectedAnswer}==${option4}" class="form-check-input"  name="content" type="radio" th:value="${option4}"  required />
+                            <label class="form-check-label" th:text="${option4}">
+                                Default radio
+                            </label>
+                        </div>
+                        <a th:unless="${firstindex}==${quesId}" th:href="@{'/user/previousQuestion/'+${questionNo}+'/'+10}" type="button" class="btn btn-primary  m-2 text-white">Previous</a>
+                        <button th:unless="${lastindex}==${quesId}" name="action" value="Submit & Next" type="submit" class="btn btn-primary  m-2 text-white" >Submit & Next</button>
+                        <button th:if="${lastindex}==${quesId}" name="action" value="End Test"  type="submit" class="btn btn-primary  m-2 text-white" >End Quiz</button>
+                        <a th:unless="${lastindex}==${quesId}"  th:href="@{'/user/previousQuestion/'+${questionNo}+'/'+5}" type="button" class="btn btn-primary  m-2 text-white">Next</a>
+                </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="test-question-overview card">
+            <h5><b>Questions Overview</b></h5>
+
+            <div>
+            <p style="display:inline-block;margin:0 0 3px 10px;font-size:19px">Total Question: <b th:text="${totalQuestion}"></b></p>
+            <p style="display:inline-block;margin:0 0 3px 15px;font-size:19px">Attempted : <b th:text="${attemptedQuestion}" style="color:green"></b></p>
+            <p style="display:inline-block;margin:0 0 3px 15px;font-size:19px">Remaining : <b th:text="${remainingQuestion}"  style="color:red"></b></p></div>
+
+            <div  style="padding:5px;height:300px;overflow-y:scroll">
+                <a     th:each="c,i:${questionList}" th:href="@{'/user/startQuestion/'+${c.quesId}}" type="button" style="text-decoration:none;pointer:cursor">
+                    <div   class="question-div text-center" th:text="${i.index+1}" th:id="${c.quesId}">
+                        1
+                    </div>
+                </a>
+            </div>
+          <!--     <div style="height:5px;background:blue;"></div>
+         <div style="overflow:hidden">
+                 <div class="row mt-2 " >
+                     <div class="col-sm-1 bg-success"></div>
+                     <div class="col-sm-3">Answered</div>
+                     <div class="col-sm-1 bg-danger"></div>
+                     <div class="col-sm-3">Not Answered</div>
+                     <div class="col-sm-1 " style="background:#d1d3d1"></div>
+                     <div class="col-sm-3">Not Visited</div>
+                 </div>
+             </div> -->
+        </div>
+    </div>
+   <!-- <script>
+function setStyle(sid){
+var im=document.getElementById(sid);
+im.style.background='red';
+&lt;!&ndash;window.history.pushState("hello","hii","/user/startQuestion/"+sid");&ndash;&gt;
+}
+&lt;!&ndash;function myFunction(qId){&ndash;&gt;
+&lt;!&ndash;document.getElementById(qId).style.display = 'none';&ndash;&gt;
+&lt;!&ndash;event.preventDefault();&ndash;&gt;
+</script>&ndash;&gt;
+   &lt;!&ndash; <script type="text/javascript">
+    var question_no=1;
+    var question_id=0;
+    var max_questions=15;
+
+    var timer=1200;
+    var min=0;
+    var sec=0;
+
+    window.onbeforeunload = function() { if(question_no!=max_questions){return "Warning: Your work will be lost!";} };
+
+    function startTimer(){
+    	min=parseInt(timer/60);
+    	sec=parseInt(timer%60);
+
+    	if(timer<1){
+            window.location="quizResult.html";
+        }
+
+    	document.getElementById("time").innerHTML = "<b>Time Left: </b>"+min.toString()+":"+sec.toString();
+    	timer&#45;&#45;;
+    	setTimeout(function(){ startTimer(); }, 1000);
+    }
+let response = fetch('http://localhost:8083/greet/A');
+response.then(res =>
+        res.json()).then(d => {
+        console.log(d);
+           d.forEach(myFunc);
+        })
+function myFunc(item, index){
+console.log(index);
+
+                question_id=item.qId;
+                $('#question'+index).html('<b>Question '+item.qId+': </b><br/>'+item.question);
+                $('#a'+index).html('<b>A:</b><input type="radio" name="answer" value="A" required>'+item.optionA);
+                $('#b'+index).html('<b>B:</b><input type="radio" name="answer" value="B">'+item.optionB);
+                $('#c'+index).html('<b>C:</b><input type="radio" name="answer" value="C">'+item.optionC);
+                $('#d'+index).html('<b>D:</b><input type="radio" name="answer" value="D">'+item.optionD);
+
+
+}
+</script>   -->
+</section>
+<!--<section>
+    <h1>Quiz</h1>
+    <div id="questions">
+        <div class="question" th:each="question, questionIndex : ${questionList}" th:if="${questionIndex.index==0}">
+            <h2 th:utext="${question.content}"></h2>
+            <div class="options">
+                <label>
+                    <input type="radio" name="answer" th:value="${question.option1}" th:text="${question.option1}">
+                </label>
+                <label>
+                    <input type="radio" name="answer" th:value="${question.option2}" th:text="${question.option2}">
+                </label>
+                <label>
+                    <input type="radio" name="answer" th:value="${question.option3}" th:text="${question.option3}">
+                </label>
+                <label>
+                    <input type="radio" name="answer" th:value="${question.option4}" th:text="${question.option4}">
+                </label>
+            </div>
+        </div>
+    </div>
+    <button onclick="nextQuestion()">Next</button>
+    <script>
+     var real_data = /*[[${questionList}]]*/;
+     alert(real_data);
+    function nextQuestion() {
+console.log(real_data);
+    var currentQuestion = $(".question:visible");
+    //console.log(${questionList});
+      alert('hello '+currentQuestion.content);
+    var nextQuestion = currentQuestion.next(".question");
+    if (nextQuestion.length == 0) {
+        // end of quiz
+        alert("Quiz complete!");
+        return;
+    }
+    currentQuestion.hide();
+    nextQuestion.show();
+}
+</script>
+</section>   -->
+
+</body>
+</html>

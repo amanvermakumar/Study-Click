@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <div class="row">
+        <h2 class="section-heading">Our Categories</h2>
+    </div>
+    <div th:each="c,i:${all}"  style="display:inline-block;margin:1px;margin-bottom:10px;">
+        <div class="card test-box-width" >
+            <div class="card-body" style="background:#fefbfd;display:inline-block;">
+                <div class="text-center">
+                    <img src="/image/quiz.png" style="height:55px;width:55px" alt=""/>
+                    <h4 th:text="${c.title}" style="font-weight:bold"></h4>
+                </div>
+
+                <p class="text " th:id="text+${i.index}" th:text="${c.description}" > </p>
+                <div class="text-center">  <a  th:href="@{'/user/showQuiz/'+${c.cid}}" class="btn  btn-sm " style="background:#ff5580;color:white" role="button">View</a></div>
+            </div>
+        </div>
+    </div>
+    <script th:inline="javascript">
+       var end = /*[[${count}]]*/;
+     for (let i = 0; i <end; i++) {
+     (function () {
+     var text = document.getElementById("text"+i).innerHTML;
+     var truncated = text.substring(0, 80) + "...";
+     document.getElementById("text"+i).innerHTML = truncated;
+   })();
+   }
+   </script>
+</section>
+</body>
+</html>
